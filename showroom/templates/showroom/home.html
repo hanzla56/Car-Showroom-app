@@ -1,0 +1,38 @@
+{% extends 'showroom/base.html' %}
+{% block style %}
+<style>
+  .card:hover {
+    transform: scale(1.2);
+    transition: transform 1s ease;
+  }
+</style>
+{% endblock style %}
+{% block content %}
+{% if brands %}
+
+<div class="container mt-5 mb-5">
+  <div class="row">
+
+    <h1 class="text-center bg-primary text-white">BRANDS</h1>
+    {% for brand in brands %}
+
+    <div class="col-lg-4 col-md-6 mb-4 text-center">
+
+      <a href="{% url 'showroom:model_page' brand.name %}"></a>
+
+      <div class="card mt-5 card" style="width: 18rem;">
+        <a href="{% url 'showroom:model_page' brand.name %}"><img src="{{ brand.logo.url }}" height="200px"
+            width="200px" class="card-img-top" alt="No image found"></a>
+        <div class="card-body">
+          <p class="card-text"><strong>{{brand.name}}</strong></p>
+          <p class="card-text"><strong>Founder : </strong>{{brand.founder}}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+{% endif %}
+{% endblock content %}

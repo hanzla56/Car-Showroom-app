@@ -1,0 +1,32 @@
+{% extends 'showroom/base.html' %}
+
+
+{% block content %}
+
+{% if models %}
+
+<div class="container mt-5 mb-5">
+  <div class="row">
+
+    <h1 class="text-center bg-primary text-white">STOCK</h1>
+{% for model in models %}
+
+    <div class="col-lg-4 col-md-6 mb-4 text-center">
+
+
+
+      <div class="card mt-5 card bg-warning"  style="width: 18rem;">
+      
+        {% comment %} <div class="card-body"> {% endcomment %}
+          <p class="card-text"><strong>{{model.name}}</strong></p>
+          <p class="card-text"><strong>Car in stock : </strong>{{model.quantity_in_stock}}</p>
+        {% comment %} </div> {% endcomment %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+{% endif %}
+{% endblock content %}

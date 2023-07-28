@@ -1,0 +1,40 @@
+{% extends 'showroom/base.html' %}
+{% block style %}
+<style>
+  .card:hover{
+    transform: scale(1.2) ;
+    transition: transform 1s ease;
+  }
+</style>
+{% endblock style %} 
+{% block content %}
+
+{% if staffs %}
+
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <h1 class="text-center bg-primary text-white">Team Members</h1>
+{% for staff in staffs %}
+
+    <div class="col-lg-4 col-md-6 mb-4 text-center">
+
+
+
+      <div class="card mt-5" style="width: 18rem;">
+        <img src="{{ staff.pic.url }}" height="200px" width="200px" class="card-img-top" alt="No image found">
+        <div class="card-body">
+          <p class="card-text"><strong>{{staff.name}}</strong></p>
+          <p class="card-text"><strong>Role : </strong>{{staff.Role}}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+{% endif %}
+{% endblock content %}
+
+
+

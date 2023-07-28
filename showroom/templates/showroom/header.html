@@ -1,0 +1,17 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white" href="#">CAR ZONE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link text-white" aria-current="page" href="{% url 'showroom:home' %}">Home</a>
+          <a class="nav-link text-white" href="{% url 'showroom:team' %}">Our Team</a>
+          <a class="nav-link text-white" href="{% url 'showroom:stock' %}">Stock</a>
+
+        </div>
+      </div>
+    </div>
+  </nav>
